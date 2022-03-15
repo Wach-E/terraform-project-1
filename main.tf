@@ -62,8 +62,8 @@ resource "aws_default_route_table" "my-app-default-route-table" {
     Name = "${var.env_prefix}:my-app-vpc/default-rtb"
   }
 }
-
-resource "aws_route_table_association" "my-app-default-route-table-association" {
-  subnet_id = aws_subnet.dev-subnet-1.id
-  route_table_id = aws_default_route_table.my-app-default-route-table.id
-}
+# When using default route table, this happens behind the hood so, we don't need to explicitly specify it.
+# resource "aws_route_table_association" "my-app-default-route-table-association" {
+#   subnet_id = aws_subnet.dev-subnet-1.id
+#   route_table_id = aws_default_route_table.my-app-default-route-table.id
+# }
