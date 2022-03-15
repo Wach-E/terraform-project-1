@@ -22,3 +22,25 @@ resource "aws_subnet" "dev-subnet-1" {
     Name = "${var.env_prefix}-subnet-1"
   }
 }
+
+resource "aws_internet_gateway" "my-app-internet-gateway" {
+  vpc_id = aws_vpc.my-app-vpc.id
+
+  tags = {
+    Name = "${var.env_prefix}:my-app-vpc/igw"
+  }
+}
+
+resource "aws_route_table" "my-app-route-table" {
+  vpc_id = aws_vpc.my-app-vpc.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.my-app-internet-gateway.id
+  }
+
+  tags = {
+    Name = "${var.env_prefix}:my-app-vpc/rtb"
+  }
+}
+
