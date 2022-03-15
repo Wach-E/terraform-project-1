@@ -59,7 +59,7 @@ resource "aws_default_route_table" "my-app-default-route-table" {
   }
 
   tags = {
-    Name = "${var.env_prefix}:my-app-vpc/rtb"
+    Name = "${var.env_prefix}:my-app-vpc/default-rtb"
   }
 }
 
