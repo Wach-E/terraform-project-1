@@ -1,0 +1,13 @@
+Here are some solutions I took to solve my Jenkins issues:
+
+1. 403-Crumb-Issue: https://stackoverflow.com/questions/44711696/jenkins-403-no-valid-crumb-was-included-in-the-request
+
+Note: This specific reply solved my issue: https://stackoverflow.com/questions/44711696/jenkins-403-no-valid-crumb-was-included-in-the-request/62957734#62957734
+* It is worthy to note that for each step, you will need to restart the jenkins server or container depending on where you are running it.
+
+2. Automatic-Github-Build-Trigger: https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Fix-No-Valid-Crumb-Error-Jenkins-GitHub-WebHook-Included
+- Additional resources:
+    - Setting API token for Jenkins: https://stackoverflow.com/a/45466184
+    - Manage Jenkins > Configure System > Github > Add Github server
+        - Name
+        - Advanced > Override Hook URL > Click Specify another hook URL for GitHub configuration
