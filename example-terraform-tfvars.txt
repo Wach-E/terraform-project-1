@@ -1,0 +1,8 @@
+vpc_cidr_block      = "eg 10.0.0.0/24"
+subnet_cidr_block   = "eg 10.0.0.0/28"
+az                  = "eg us-west-2c"
+env_prefix          = "environment"
+ip_address_range    = "range_for_laptop_ip"
+image_name          = "instance image name, eg amzn2-ami-hvm-*-x86_64-gp2"
+instance_type       = "instance type, eg t2.micro"
+public_key_location = ""

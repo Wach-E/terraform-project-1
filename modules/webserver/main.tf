@@ -8,7 +8,6 @@ resource "aws_security_group" "my-app-sg" {
     protocol    = "tcp"
     cidr_blocks = [var.ip_address_range]
   }
-
   ingress {
     from_port   = 8080
     to_port     = 8080
