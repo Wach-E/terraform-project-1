@@ -16,5 +16,16 @@ module "my-app-subnet" {
   az                     = var.az
   env_prefix             = var.env_prefix
   default_route_table_id = aws_vpc.my-app-vpc.default_route_table_id
-  ip_address_range       = var.ip_address_range
+}
+
+module "my-app-webserver" {
+  source              = "./modules/webserver/"
+  vpc_id              = aws_vpc.my-app-vpc.id
+  ip_address_range    = var.ip_address_range
+  env_prefix          = var.env_prefix
+  image_name          = var.image_name
+  instance_type       = var.instance_type
+  subnet_id           = module.my-app-subnet.subnet.id
+  az                  = var.az
+  public_key_location = var.public_key_location
 }
